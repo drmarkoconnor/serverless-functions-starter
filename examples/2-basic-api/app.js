@@ -7,7 +7,7 @@ const fetchData=async()=>{
          const{ data }=await axios.get('/api/2-basic-api')
          result.innerHTML=""
          data.forEach(element => {
-             const{image:{url},name,price}=element
+             const{url,name,price}=element
              const prodEL=document.createElement('prodEL')
              prodEL.innerHTML=`<article class="product"><img src="${url}"/><div class+"info"><h5>${name}</h5><h5 class="price">${price}</h5></div></article>`
              result.appendChild(prodEL)

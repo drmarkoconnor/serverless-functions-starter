@@ -1,0 +1,146 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+	list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+	scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+	min-height: 100vh;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+h1 {
+	line-height: 1.6;
+}
+
+.container {
+	max-width: 80%;
+	padding: 1em;
+	margin: 0 auto;
+	outline: 1px solid red;
+}
+.tasks {
+	display: flex;
+	flex-direction: column;
+	padding: 1em;
+	flex-wrap: wrap;
+}
+
+.task-card {
+	display: flex;
+	flex-direction: column;
+	padding: 2em;
+	max-width: 80%;
+	border: 2px solid rgb(58, 36, 36);
+	border-radius: 2em;
+	box-shadow: 0 4px 5px 5px rgba(7, 1, 26, 0.2);
+	margin: 0.5em;
+}
+
+.details {
+	display: flex;
+	flex-direction: column;
+	margin-top: 2em;
+	padding: 1em;
+	justify-content: space-evenly;
+	flex-shrink: 1;
+}
+
+.pill {
+	border: 1px solid;
+	background-color: var(--bg, pink);
+	padding: 0.6em;
+	border-radius: 1000rem;
+	color: var(--fg);
+}
+.whose {
+	--bg: hsl(0, 73%, 73%);
+}
+.contractor-name {
+	--bg: hsl(270, 49%, 50%);
+	--fg: white;
+}
+.status {
+	--bg: rgba(221, 238, 34, 0.23);
+}
+.date-done {
+	--bg: rgba(90, 215, 219, 0.23);
+}
+
+@media (min-width: 880px) {
+	.details {
+		flex-direction: row;
+		max-width: 70%;
+		align-items: center;
+		margin: 0 auto;
+	}
+	.tasks {
+		flex-direction: row;
+	}
+	.task-card {
+		max-width: 80%;
+	}
+}
